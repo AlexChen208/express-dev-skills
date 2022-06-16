@@ -7,8 +7,9 @@
     <title>Skill Tree</title>
 </head>
 <body>
-    <h3><%= skill.todo %></h3>
+    <h3><%= skill.skill %></h3>
     <h3>Complete: <%= skill.done ? 'Yes' : 'No' %></h3>
-    <a href="/skills">Back to List</a>
+    <a href="/skills/<%=skill.id%>/edit">Update Skill</a>
+    <a href="/skills">Home Page</a>
   </body>
 </html>

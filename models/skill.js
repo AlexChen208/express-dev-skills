@@ -1,8 +1,8 @@
 const skills = [
-    {id: 125223, todo: 'Learn HTML', done: true},
-    {id: 127904, todo: 'Learn CSS', done: true},
-    {id: 129608, todo: 'Learn JavaScript', done: true},
-    {id: 131464, todo: 'Learn Express', done: false},
+    {id: 125223, skill: 'Learn HTML', done: true},
+    {id: 127904, skill: 'Learn CSS', done: true},
+    {id: 129608, skill: 'Learn JavaScript', done: true},
+    {id: 131464, skill: 'Learn Express', done: false},
   ];
   
   module.exports = {
@@ -10,6 +10,7 @@ const skills = [
     getOne,
     create,
     deleteOne,
+    update
   };
   
   function getAll() {
@@ -31,4 +32,10 @@ const skills = [
     id = parseInt(id)
     const idx = skills.findIndex(skill => skill.id === id)
     skills.splice(idx, 1)
+  }
+
+  function update(editContent, id) {
+    id = parseInt(id)
+    const skillUpdate = skills.find(skill => skill.id === id)
+    skillUpdate.skill = editContent.skill
   }
